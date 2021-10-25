@@ -1,0 +1,7 @@
+When two free ends are used as a boundary condition, one of the singular values/eigenvalues becomes 0. 
+Since this is the minimum eigenvalue, it results in a very high or undefined condition number for the K matrix
+due to division by 0. Because the inverse of K is found using SVD, this also results in a divide by 0, which
+makes sense given that the matrix is ill-conditioned. Since K cannot be inverted or even projected using SVD,
+the system is unable to be solved for, and the resulting displacements u are undefined (as well as all of the other vectors). 
+This also makes sense physically, since a system with no fixed ends would simply fall infinitely due to gravity, so
+the system never reaches equilibrium and there is no equilibrium displacement.
